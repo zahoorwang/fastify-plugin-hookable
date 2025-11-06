@@ -1,0 +1,72 @@
+{
+  "name": "@zahoor/fastify-hookable",
+  "version": "0.0.1",
+  "description": "A Fastify plugin providing a type-safe, extensible hook system powered by hookable, with optional debugger and lifecycle integration.",
+  "keywords": [
+    "fastify",
+    "plugin",
+    "plugins",
+    "hook",
+    "hookable"
+  ],
+  "homepage": "https://zahoor.wang/fastify/hookable",
+  "bugs": {
+    "url": "https://github.com/zahoorwang/fastify-plugin-hookable/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zahoorwang/fastify-plugin-hookable.git"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/zahoorwang"
+    }
+  ],
+  "license": "MIT",
+  "author": "Zahoor Wang <zahoor.wang@gmail.com>",
+  "sideEffects": false,
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run code:fmt && npm run code:lint && npm run code:test && npm run code:build",
+    "code:build": "rolldown -c",
+    "code:fmt": "oxfmt",
+    "code:lint": "oxlint",
+    "code:lint:fix": "oxlint --fix",
+    "code:test": "vitest run --typecheck.tsconfig tsconfig.test.json --coverage",
+    "package:sort": "sort-package-json",
+    "package:taze": "taze -I",
+    "test": "npm run code:test"
+  },
+  "dependencies": {
+    "fastify-plugin": "^5.1.0",
+    "hookable": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@vitest/coverage-v8": "^4.0.7",
+    "@vitest/ui": "4.0.7",
+    "fastify": "^5.6.1",
+    "oxfmt": "^0.11.0",
+    "oxlint": "^1.26.0",
+    "rolldown": "latest",
+    "rolldown-plugin-dts": "^0.17.3",
+    "sort-package-json": "^3.4.0",
+    "taze": "^19.9.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
